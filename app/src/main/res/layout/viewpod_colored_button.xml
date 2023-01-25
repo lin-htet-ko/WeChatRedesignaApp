@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.linhteko.wechat.viewpods.ColoredButtonViewPod xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_colored_button"
+    android:paddingHorizontal="@dimen/padding_horizontal_btn"
+    android:paddingVertical="@dimen/padding_verticle_btn">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvColoredBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        tools:text="Login"
+        style="@style/text_style_for_custom_button" />
+
+</com.linhteko.wechat.viewpods.ColoredButtonViewPod>

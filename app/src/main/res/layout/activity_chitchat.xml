@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    tools:context=".activities.ChitchatActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurface">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tbChitchat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btnChitchatBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_arrow_back"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivChitchatProfile"
+                    android:layout_width="@dimen/margin_4x"
+                    android:layout_height="@dimen/margin_4x"
+                    android:layout_marginStart="@dimen/margin_2x"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/btnChitchatBack"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearance="@style/circle_img"
+                    app:srcCompat="@drawable/placeholder_portrait" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvChitchatProfileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_2x"
+                    android:text="@string/app_name"
+                    android:textColor="?attr/colorPrimary"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/tvChitchatActiveStatus"
+                    app:layout_constraintStart_toEndOf="@id/ivChitchatProfile"
+                    app:layout_constraintTop_toTopOf="@id/ivChitchatProfile"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvChitchatActiveStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textSize="@dimen/size_active_status_for_chitchat"
+                    app:layout_constraintBottom_toBottomOf="@id/ivChitchatProfile"
+                    app:layout_constraintStart_toStartOf="@id/tvChitchatProfileName"
+                    app:layout_constraintTop_toBottomOf="@id/tvChitchatProfileName" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvChitchatConversation"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/empty"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="@dimen/margin_2x"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/btnChitchatSend"
+                tools:listitem="@layout/viewholder_chat_text" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="@dimen/empty"
+                android:id="@+id/etChatTypeMessage"
+                android:layout_height="@dimen/empty"
+                android:layout_marginHorizontal="@dimen/margin_2x"
+                android:background="@android:color/transparent"
+                android:hint="@string/lbl_type_a_message"
+                app:layout_constraintBottom_toBottomOf="@id/btnChitchatSend"
+                app:layout_constraintEnd_toStartOf="@id/btnChitchatSend"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btnChitchatSend" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/btnChitchatSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_2x"
+                app:layout_constraintBottom_toTopOf="@id/llSendAction"
+                app:layout_constraintEnd_toEndOf="@id/rvChitchatConversation"
+                app:srcCompat="@drawable/ic_send_disable" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_2x"
+                android:id="@+id/llSendAction"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="@dimen/empty"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnSendImage"
+                    android:layout_marginHorizontal="@dimen/margin_small"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_send_image" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="@dimen/empty"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_small"
+                    android:layout_weight="1"
+                    android:id="@+id/btnSendCamera"
+                    app:srcCompat="@drawable/ic_send_camera" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="@dimen/empty"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnSendGif"
+                    android:layout_marginHorizontal="@dimen/margin_small"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_send_gif" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="@dimen/empty"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnSendLocation"
+                    android:layout_marginHorizontal="@dimen/margin_small"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_send_location" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="@dimen/empty"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnSendVoice"
+                    android:layout_marginHorizontal="@dimen/margin_small"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_send_voice" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

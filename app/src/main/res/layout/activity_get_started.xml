@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="?attr/colorSurface"
+    android:layout_height="match_parent"
+    tools:context=".activities.GetStartedActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivGetStartedLogo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@id/tvGetStartedIntro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvGetStartedIntro"
+        android:layout_width="@dimen/empty"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_2x"
+        android:layout_marginBottom="@dimen/general_margin"
+        android:text="@string/lbl_getstared_intro"
+        android:textColor="?attr/colorPrimaryVariant"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        app:layout_constraintBottom_toTopOf="@id/tvGetStartedSubIntro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvGetStartedSubIntro"
+        android:layout_width="@dimen/empty"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_big"
+        android:text="@string/lbl_getstarted_sub_intro"
+        android:textAlignment="center"
+        android:textColor="?attr/colorPrimaryVariant"
+        app:layout_constraintBottom_toTopOf="@id/vpGetStartedLogin"
+        app:layout_constraintEnd_toEndOf="@id/tvGetStartedIntro"
+        app:layout_constraintStart_toStartOf="@id/tvGetStartedIntro" />
+
+    <include
+        android:id="@+id/vpGetStartedSignUp"
+        layout="@layout/viewpod_outlined_button"
+        android:layout_width="@dimen/empty"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/general_margin"
+        android:layout_marginBottom="@dimen/margin_large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/vpGetStartedLogin"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="@id/tvGetStartedIntro" />
+
+    <include
+        android:id="@+id/vpGetStartedLogin"
+        layout="@layout/viewpod_colored_button"
+        android:layout_width="@dimen/empty"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/general_margin"
+        android:layout_marginBottom="@dimen/margin_large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tvGetStartedIntro"
+        app:layout_constraintStart_toEndOf="@id/vpGetStartedSignUp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.linhteko.wechat.viewpods.PostReactionsViewPod xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:paddingVertical="@dimen/margin_2x">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivPostReactionFav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_baseline_favorite_border_24" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPostReactionFav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_small"
+        tools:text="10" />
+
+    <View
+        android:layout_width="@dimen/empty"
+        android:layout_height="@dimen/empty"
+        android:layout_weight="1" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivPostReactionComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_comment" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPostReactionComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_small"
+        tools:text="10" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivPostReactionBookmark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/general_margin"
+        app:srcCompat="@drawable/ic_bookmark_outline" />
+
+
+</com.linhteko.wechat.viewpods.PostReactionsViewPod>

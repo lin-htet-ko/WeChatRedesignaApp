@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AddNewGroupActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCreateGroupClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_3x"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_close_24" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCreateGroupLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_new_group"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="?attr/colorPrimary"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/ivCreateGroupClose"
+            app:layout_constraintEnd_toStartOf="@id/btnCreateGroups"
+            app:layout_constraintStart_toEndOf="@id/ivCreateGroupClose"
+            app:layout_constraintTop_toTopOf="@id/ivCreateGroupClose" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCreateGroups"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_3x"
+            android:text="@string/lbl_create"
+            android:textAllCaps="false"
+            app:cornerRadius="@dimen/general_radius_btn"
+            app:layout_constraintBottom_toBottomOf="@id/tvCreateGroupLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvCreateGroupLabel" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvGroupNameLabel"
+            android:layout_width="@dimen/empty"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_2x"
+            android:layout_marginTop="@dimen/margin_3x"
+            android:text="@string/lbl_group_name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_constraintEnd_toEndOf="@id/btnCreateGroups"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivCreateGroupClose" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etAddNewGroupName"
+            android:layout_width="@dimen/empty"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:layout_marginEnd="@dimen/general_margin"
+            app:layout_constraintEnd_toStartOf="@id/ivAddNewGroupImage"
+            app:layout_constraintStart_toStartOf="@id/tvGroupNameLabel"
+            app:layout_constraintTop_toBottomOf="@id/tvGroupNameLabel" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="@dimen/size_upload_new_photo"
+            android:layout_height="@dimen/size_upload_new_photo"
+            app:srcCompat="@drawable/ic_baseline_image_24"
+            android:id="@+id/ivAddNewGroupImage"
+            app:layout_constraintTop_toTopOf="@id/etAddNewGroupName"
+            app:layout_constraintBottom_toBottomOf="@id/etAddNewGroupName"
+            app:layout_constraintEnd_toEndOf="@id/tvGroupNameLabel"/>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilAddNewSearchName"
+            android:layout_width="@dimen/empty"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/general_margin"
+            android:hint="@string/lbl_name"
+            app:boxCornerRadiusBottomEnd="@dimen/general_margin"
+            app:boxCornerRadiusBottomStart="@dimen/general_margin"
+            app:boxCornerRadiusTopEnd="@dimen/general_margin"
+            app:boxCornerRadiusTopStart="@dimen/general_margin"
+            app:boxStrokeWidth="@dimen/empty"
+            app:boxStrokeWidthFocused="@dimen/empty"
+            app:hintAnimationEnabled="false"
+            app:layout_constraintEnd_toEndOf="@id/ivAddNewGroupImage"
+            app:layout_constraintStart_toStartOf="@id/etAddNewGroupName"
+            app:layout_constraintTop_toBottomOf="@id/etAddNewGroupName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tieAddNewGroupContactName"
+                android:inputType="textPersonName"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAddNewGroupMembers"
+            android:layout_width="@dimen/empty"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_2x"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="@id/tilAddNewSearchName"
+            app:layout_constraintStart_toStartOf="@id/tilAddNewSearchName"
+            app:layout_constraintTop_toBottomOf="@id/tilAddNewSearchName"
+            tools:listitem="@layout/viewholder_group_member_for_add_new" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAddNewGroupContacts"
+            android:layout_width="@dimen/empty"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/general_margin"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/rvAddNewGroupMembers"
+            app:layout_constraintStart_toStartOf="@id/rvAddNewGroupMembers"
+            app:layout_constraintTop_toBottomOf="@id/rvAddNewGroupMembers"
+            tools:listitem="@layout/viewholder_contact_for_add_new_group" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

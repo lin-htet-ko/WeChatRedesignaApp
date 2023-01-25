@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="general_radius_btn">5dp</dimen>
+    <dimen name="padding_horizontal_btn">20dp</dimen>
+    <dimen name="padding_verticle_btn">15dp</dimen>
+    <dimen name="empty">0dp</dimen>
+    <dimen name="general_margin">8dp</dimen>
+    <dimen name="margin_small">5dp</dimen>
+    <dimen name="stroke_active">3dp</dimen>
+    <dimen name="margin_2x">16dp</dimen>
+    <dimen name="margin_3x">24dp</dimen>
+    <dimen name="margin_4x">32dp</dimen>
+    <dimen name="margin_large">100dp</dimen>
+    <dimen name="margin_big">50dp</dimen>
+    <dimen name="size_icon_btn">50dp</dimen>
+    <dimen name="size_post_profile_img">50dp</dimen>
+    <dimen name="size_media_photo">150dp</dimen>
+    <dimen name="size_group_photo">40dp</dimen>
+    <dimen name="size_active_status">15dp</dimen>
+    <dimen name="size_upload_new_photo">30dp</dimen>
+    <dimen name="size_small_qr">50dp</dimen>
+    <dimen name="size_big_qr">200dp</dimen>
+    <dimen name="size_stroke_person">15dp</dimen>
+    <dimen name="size_active_status_for_chitchat">11sp</dimen>
+</resources>

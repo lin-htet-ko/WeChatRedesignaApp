@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llProfile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/general_margin"
+    tools:context=".fragments.ProfileFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="?attr/colorPrimary">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/general_margin">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivProfileImage"
+                android:layout_width="@dimen/size_media_photo"
+                android:layout_height="@dimen/size_media_photo"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearance="@style/circle_img"
+                app:srcCompat="@drawable/placeholder_portrait" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivProfileQrCode"
+                android:layout_width="@dimen/size_small_qr"
+                android:layout_height="@dimen/size_small_qr"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="@id/ivProfileImage"
+                app:layout_constraintEnd_toEndOf="@id/ivProfileImage"
+                app:srcCompat="@drawable/placeholder_portrait" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivProfileUpload"
+                android:layout_width="@dimen/size_upload_new_photo"
+                android:layout_height="@dimen/size_upload_new_photo"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="@id/ivProfileImage"
+                app:layout_constraintStart_toStartOf="@id/ivProfileImage"
+                app:srcCompat="@drawable/upload_new_profile_photo"
+                app:tint="@android:color/white" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvProfileName"
+                android:layout_width="@dimen/empty"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/general_margin"
+                android:text="@string/app_name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="?attr/colorOnPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivProfileImage"
+                app:layout_constraintTop_toTopOf="@id/ivProfileImage" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivProfilePhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/general_margin"
+                app:layout_constraintBottom_toTopOf="@id/ivProfileBirthday"
+                app:layout_constraintStart_toStartOf="@id/tvProfileName"
+                app:layout_constraintTop_toBottomOf="@id/tvProfileName"
+                app:srcCompat="@drawable/ic_baseline_phone_android_24"
+                app:tint="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvProfilePhone"
+                android:layout_width="@dimen/empty"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/general_margin"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/ivProfilePhone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivProfilePhone"
+                app:layout_constraintTop_toTopOf="@id/ivProfilePhone" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivProfileBirthday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/general_margin"
+                app:layout_constraintBottom_toTopOf="@id/ivProfileGender"
+                app:layout_constraintStart_toStartOf="@id/ivProfilePhone"
+                app:layout_constraintTop_toBottomOf="@id/ivProfilePhone"
+                app:srcCompat="@drawable/ic_baseline_calendar_month_24"
+                app:tint="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvProfileBirthday"
+                android:layout_width="@dimen/empty"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/general_margin"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/ivProfileBirthday"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivProfileBirthday"
+                app:layout_constraintTop_toTopOf="@id/ivProfileBirthday" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivProfileGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/general_margin"
+                app:layout_constraintBottom_toBottomOf="@id/ivProfileImage"
+                app:layout_constraintStart_toStartOf="@id/ivProfileBirthday"
+                app:layout_constraintTop_toBottomOf="@id/ivProfileBirthday"
+                app:srcCompat="@drawable/ic_baseline_transgender_24"
+                app:tint="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvProfileGender"
+                android:layout_width="@dimen/empty"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/general_margin"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/ivProfileGender"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivProfileGender"
+                app:layout_constraintTop_toTopOf="@id/ivProfileGender" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvProfileBookmarkedLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_2x"
+        android:text="@string/lbl_bookmarked_moments"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="?attr/colorPrimary" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvProfileBookmarks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/general_margin"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/viewholder_post_general" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvProfileBookmarkEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_large"
+        android:text="No More Bookmarked Moments" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

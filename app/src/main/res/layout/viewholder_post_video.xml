@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/margin_2x"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/viewpod_post_header"
+        android:id="@+id/vpPostVideoTextHeader"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPostVideoTextDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="?attr/colorPrimary"
+        tools:text="@string/app_name"/>
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/vvMomentPostVideo"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        tools:listitem="@layout/viewholder_photo"
+        android:layout_marginTop="@dimen/general_margin"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/viewpod_post_reactions"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

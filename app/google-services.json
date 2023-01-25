@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "460772542344",
+    "project_id": "wechat-e1951",
+    "storage_bucket": "wechat-e1951.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:460772542344:android:a9e6462169ce5dbd62dc3d",
+        "android_client_info": {
+          "package_name": "com.linhteko.wechat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "460772542344-muo6qi88qfdnkt0uerf05cpbre5h8ufk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGWsbToVCJqYdEU9uH8uOh2As3hZreAGQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "460772542344-muo6qi88qfdnkt0uerf05cpbre5h8ufk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/nsvOtpRoot"
+    android:background="?attr/colorSurface"
+    tools:context=".activities.OtpActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnOtpBack"
+            android:layout_width="@dimen/size_icon_btn"
+            android:layout_height="@dimen/size_icon_btn"
+            android:layout_margin="@dimen/margin_2x"
+            android:background="@android:color/transparent"
+            android:padding="@dimen/general_margin"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOtpWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_big"
+            android:layout_marginTop="@dimen/margin_2x"
+            android:text="@string/lbl_hi"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+            android:textColor="?attr/colorPrimary"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnOtpBack" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOtpOtpToContinue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/general_margin"
+            android:alpha="0.7"
+            android:text="@string/lbl_create_a_new_account"
+            android:textColor="?attr/colorPrimary"
+            app:layout_constraintStart_toStartOf="@id/tvOtpWelcome"
+            app:layout_constraintTop_toBottomOf="@id/tvOtpWelcome" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivLoin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/margin_3x"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvOtpOtpToContinue"
+            app:srcCompat="@drawable/otp_illustration" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilOtpPhone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_3x"
+            android:layout_marginHorizontal="@dimen/general_margin"
+            app:layout_constraintEnd_toStartOf="@id/vpOtpGet"
+            android:hint="@string/lbl_enter_your_phone_number"
+            android:nestedScrollingEnabled="true"
+            app:boxStrokeWidth="@dimen/empty"
+            app:boxStrokeWidthFocused="@dimen/empty"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivLoin">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tieOtpPhone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="phone" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <include
+            android:id="@+id/vpOtpGet"
+            layout="@layout/viewpod_colored_button"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/size_icon_btn"
+            android:layout_marginEnd="@dimen/general_margin"
+            app:layout_constraintStart_toEndOf="@id/tilOtpPhone"
+            app:layout_constraintBottom_toBottomOf="@id/tilOtpPhone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tilOtpPhone" />
+
+        <in.aabhasjindal.otptextview.OtpTextView
+            android:id="@+id/otpOtpView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_3x"
+            android:layout_marginTop="@dimen/margin_2x"
+            android:textColor="?attr/colorPrimaryVariant"
+            app:layout_constraintEnd_toEndOf="@id/vpOtpGet"
+            app:layout_constraintStart_toStartOf="@id/tilOtpPhone"
+            app:layout_constraintTop_toBottomOf="@id/tilOtpPhone"
+            app:length="6"
+            app:otp_box_background="@color/white" />
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llResendCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/general_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/otpOtpView">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvOtpDontReceive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/general_margin"
+                android:text="@string/lbl_don_t_receive_the_otp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvOtpForgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/general_margin"
+                android:text="@string/lbl_resend_code"
+                android:textColor="?attr/colorPrimaryVariant"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <include
+            android:id="@+id/vpBtnOtpVerify"
+            layout="@layout/viewpod_colored_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginVertical="@dimen/margin_big"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llResendCode" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

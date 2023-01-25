@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_moment"
+        android:icon="@drawable/ic_moment"
+        android:title="@string/lbl_moment"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_chat"
+        android:icon="@drawable/ic_chat"
+        android:title="@string/lbl_chat"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_contacts"
+        android:icon="@drawable/ic_contacts"
+        android:title="@string/lbl_contacts"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_profile"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/lbl_me"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_setting"
+        android:icon="@drawable/ic_setting"
+        android:title="@string/lbl_setting"
+        app:showAsAction="ifRoom" />
+
+</menu>

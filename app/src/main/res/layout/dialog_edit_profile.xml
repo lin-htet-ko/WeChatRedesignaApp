@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/general_margin"
+    android:paddingVertical="@dimen/margin_2x"
+    tools:context=".dialogs.EditProfileDialog">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/general_margin"
+        android:text="@string/lbl_name" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/etEditProfileName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_2x"
+        android:paddingHorizontal="@dimen/general_margin"
+        android:text="@string/lbl_phone" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/etEditProfilePhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_2x"
+        android:paddingHorizontal="@dimen/general_margin"
+        android:text="@string/lbl_date_of_birth" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_2x"
+        android:orientation="horizontal">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvProfileEditDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@color/white">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spProfileEditDay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvProfileEditMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="@dimen/general_margin"
+            android:layout_weight="2"
+            app:cardBackgroundColor="@color/white">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spProfileEditMonth"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvProfileEditYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@color/white">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spProfileEditYear"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_2x"
+        android:paddingHorizontal="@dimen/general_margin"
+        android:text="@string/lbl_gender" />
+
+    <RadioGroup
+        android:id="@+id/rgProfileEditGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_2x"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/rbProfileEditMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="?attr/colorPrimary"
+            android:text="@string/lbl_male" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/rbProfileEditFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_3x"
+            android:buttonTint="?attr/colorPrimary"
+            android:text="@string/lbl_female" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/rbProfileEditOther"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_3x"
+            android:buttonTint="?attr/colorPrimary"
+            android:text="@string/lbl_other" />
+
+    </RadioGroup>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_2x"
+        android:gravity="center_horizontal">
+
+        <include
+            android:id="@+id/vpEditProfileCancel"
+            layout="@layout/viewpod_outlined_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/general_margin" />
+
+        <include
+            android:id="@+id/vpEditProfileSave"
+            layout="@layout/viewpod_colored_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/general_margin" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>

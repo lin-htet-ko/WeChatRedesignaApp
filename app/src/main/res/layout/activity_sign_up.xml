@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/clSignUpRoot"
+    android:background="?attr/colorSurface"
+    tools:context=".activities.SignUpActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btnSignUpBack"
+                android:layout_width="@dimen/size_icon_btn"
+                android:layout_height="@dimen/size_icon_btn"
+                android:layout_margin="@dimen/margin_2x"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/general_margin"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_arrow_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSignUpWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_4x"
+                android:layout_marginTop="@dimen/margin_2x"
+                android:text="@string/lbl_hi"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                android:textColor="?attr/colorPrimary"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnSignUpBack" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSignUpCreateAcc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/general_margin"
+                android:alpha="0.7"
+                android:text="@string/lbl_create_a_new_account"
+                android:textColor="?attr/colorPrimary"
+                app:layout_constraintStart_toStartOf="@id/tvSignUpWelcome"
+                app:layout_constraintTop_toBottomOf="@id/tvSignUpWelcome" />
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="@dimen/size_post_profile_img"
+                android:layout_height="@dimen/size_post_profile_img"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/ivSignUpProfile"
+                android:scaleType="centerCrop"
+                android:layout_marginHorizontal="@dimen/margin_3x"
+                android:layout_marginTop="@dimen/margin_3x"
+                app:shapeAppearance="@style/circle_img"
+                app:srcCompat="@drawable/ic_profile"
+                app:layout_constraintTop_toBottomOf="@id/tvSignUpCreateAcc" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tieSignUpName"
+                android:layout_width="@dimen/empty"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/margin_3x"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:hint="@string/lbl_name"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivSignUpProfile"
+                app:layout_constraintTop_toBottomOf="@id/tvSignUpCreateAcc" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSIgnUpDateOfBirth"
+                android:layout_width="@dimen/empty"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:text="@string/lbl_date_of_birth"
+                android:textAlignment="viewStart"
+                android:textColor="@color/grey"
+                app:layout_constraintEnd_toEndOf="@id/tieSignUpName"
+                app:layout_constraintStart_toStartOf="@id/ivSignUpProfile"
+                app:layout_constraintTop_toBottomOf="@id/tieSignUpName" />
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvSignUpDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_2x"
+                app:cardBackgroundColor="@color/white"
+                app:layout_constraintEnd_toStartOf="@id/cvSignUpMonth"
+                app:layout_constraintStart_toStartOf="@id/tvSIgnUpDateOfBirth"
+                app:layout_constraintTop_toBottomOf="@id/tvSIgnUpDateOfBirth">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spSignUpDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvSignUpMonth"
+                android:layout_width="@dimen/empty"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/general_margin"
+                app:cardBackgroundColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/cvSignUpDay"
+                app:layout_constraintEnd_toStartOf="@id/cvSignUpYear"
+                app:layout_constraintStart_toEndOf="@id/cvSignUpDay"
+                app:layout_constraintTop_toTopOf="@id/cvSignUpDay">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spSignUpMonth"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvSignUpYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/cvSignUpMonth"
+                app:layout_constraintEnd_toEndOf="@id/tieSignUpName"
+                app:layout_constraintStart_toEndOf="@id/cvSignUpMonth"
+                app:layout_constraintTop_toTopOf="@id/cvSignUpMonth">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spSignUpYear"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSIgnUpGender"
+                android:layout_width="@dimen/empty"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:text="@string/lbl_gender"
+                android:textColor="@color/grey"
+                app:layout_constraintEnd_toEndOf="@id/cvSignUpYear"
+                app:layout_constraintStart_toStartOf="@id/cvSignUpDay"
+                app:layout_constraintTop_toBottomOf="@id/cvSignUpYear" />
+
+
+            <RadioGroup
+                android:layout_width="@dimen/empty"
+                android:layout_height="wrap_content"
+                android:id="@+id/rgSignUpGender"
+                android:layout_marginTop="@dimen/margin_2x"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@id/tvSIgnUpGender"
+                app:layout_constraintStart_toStartOf="@id/tvSIgnUpGender"
+                app:layout_constraintTop_toBottomOf="@id/tvSIgnUpGender">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rbSignUpMale"
+                    android:buttonTint="?attr/colorPrimary"
+                    android:text="@string/lbl_male" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rbSignUpFemale"
+                    android:layout_marginStart="@dimen/margin_3x"
+                    android:buttonTint="?attr/colorPrimary"
+                    android:text="@string/lbl_female" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:layout_width="wrap_content"
+                    android:id="@+id/rbSignUpOther"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_3x"
+                    android:buttonTint="?attr/colorPrimary"
+                    android:text="@string/lbl_other" />
+
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tieSignUpPassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/margin_3x"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:hint="@string/lbl_password"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rgSignUpGender" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/cbSignUpTermAndService"
+                android:layout_width="@dimen/empty"
+                android:layout_height="wrap_content"
+                android:textColor="@color/grey"
+                android:layout_marginTop="@dimen/margin_3x"
+                app:layout_constraintTop_toBottomOf="@id/tieSignUpPassword"
+                app:layout_constraintStart_toStartOf="@id/tieSignUpPassword"
+                app:layout_constraintEnd_toEndOf="@id/tieSignUpPassword"
+                android:text="@string/lbl_agree_to_term_and_service" />
+
+            <include
+                android:id="@+id/vpSignUpBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                layout="@layout/viewpod_colored_button"
+                android:layout_marginTop="@dimen/margin_big"
+                app:layout_constraintStart_toStartOf="@id/cbSignUpTermAndService"
+                app:layout_constraintEnd_toEndOf="@id/cbSignUpTermAndService"
+                app:layout_constraintTop_toBottomOf="@id/cbSignUpTermAndService" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

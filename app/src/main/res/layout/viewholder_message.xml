@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/general_margin"
+        app:cardElevation="@dimen/margin_small">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/general_margin">
+
+            <FrameLayout
+                android:id="@+id/flMessagePerson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivMessagePersonImg"
+                    android:layout_width="@dimen/size_post_profile_img"
+                    android:layout_height="@dimen/size_post_profile_img"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearance="@style/circle_img"
+                    app:srcCompat="@drawable/placeholder_portrait" />
+
+                <View
+                    android:layout_width="@dimen/size_active_status"
+                    android:layout_height="@dimen/size_active_status"
+                    android:layout_gravity="end|bottom"
+                    android:background="@drawable/background_circle" />
+            </FrameLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMessageUserName"
+                android:layout_width="@dimen/empty"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/general_margin"
+                tools:text="Lin Htet Ko"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@id/tvMessageStatus"
+                app:layout_constraintEnd_toStartOf="@id/tvMessageDuration"
+                app:layout_constraintStart_toEndOf="@id/flMessagePerson"
+                app:layout_constraintTop_toTopOf="@id/flMessagePerson" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMessageStatus"
+                android:layout_width="@dimen/empty"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/general_margin"
+                tools:text="You sent a video"
+                android:textColor="@color/grey"
+                app:layout_constraintBottom_toBottomOf="@id/flMessagePerson"
+                app:layout_constraintEnd_toStartOf="@id/tvMessageDuration"
+                app:layout_constraintStart_toEndOf="@id/flMessagePerson"
+                app:layout_constraintTop_toBottomOf="@id/tvMessageUserName" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMessageDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="5 min"
+                app:layout_constraintBottom_toTopOf="@id/ivMessageStatus"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/flMessagePerson"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivMessageStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/flMessagePerson"
+                app:layout_constraintEnd_toEndOf="@id/tvMessageDuration"
+                app:layout_constraintTop_toBottomOf="@id/tvMessageDuration"
+                app:srcCompat="@drawable/ic_baseline_done_all_24" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

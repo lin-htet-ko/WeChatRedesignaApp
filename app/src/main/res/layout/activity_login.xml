@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/nsvLoginRoot"
+    tools:context=".activities.LoginActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnLoginBack"
+            android:layout_width="@dimen/size_icon_btn"
+            android:layout_height="@dimen/size_icon_btn"
+            android:layout_margin="@dimen/margin_2x"
+            android:background="@android:color/transparent"
+            android:padding="@dimen/general_margin"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLoginWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_big"
+            android:layout_marginTop="@dimen/margin_2x"
+            android:text="@string/lbl_welcome"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+            android:textColor="?attr/colorPrimary"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnLoginBack" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLoginLoginToContinue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/general_margin"
+            android:alpha="0.7"
+            android:text="@string/lbl_login_to_continue"
+            android:textColor="?attr/colorPrimary"
+            app:layout_constraintStart_toStartOf="@id/tvLoginWelcome"
+            app:layout_constraintTop_toBottomOf="@id/tvLoginWelcome" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivLoin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/margin_3x"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvLoginLoginToContinue"
+            app:srcCompat="@drawable/login_illustration" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilLoginPhone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="@dimen/empty"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_3x"
+            android:layout_marginTop="@dimen/margin_3x"
+            android:hint="@string/lbl_enter_your_phone_number"
+            android:nestedScrollingEnabled="true"
+            app:boxStrokeWidth="@dimen/empty"
+            app:boxStrokeWidthFocused="@dimen/empty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivLoin">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiePhone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="phone" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilLoginPassword"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="@dimen/empty"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_3x"
+            android:layout_marginTop="@dimen/margin_2x"
+            android:hint="@string/lbl_enter_your_password"
+            android:nestedScrollingEnabled="true"
+            app:boxStrokeWidth="@dimen/empty"
+            app:boxStrokeWidthFocused="@dimen/empty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilLoginPhone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiePassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textVisiblePassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLoginForgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/general_margin"
+            android:text="@string/lbl_forgot_password"
+            android:textColor="?attr/colorPrimaryVariant"
+            app:layout_constraintEnd_toEndOf="@id/tilLoginPassword"
+            app:layout_constraintTop_toBottomOf="@id/tilLoginPassword" />
+
+        <include
+            android:id="@+id/vpBtnLogin"
+            layout="@layout/viewpod_colored_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginVertical="@dimen/margin_big"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvLoginForgotPassword" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
